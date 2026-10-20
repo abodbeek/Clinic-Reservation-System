@@ -53,11 +53,8 @@ Clinic-Reservation-Backend-Complete/
 │   ├── utils/
 │   │   └── booking.js
 │   └── server.js
-├── database/
-│   └── 001_schema.sql
 ├── tests/
 │   └── booking.test.js
-├── Clinic_Reservation.postman_collection.json
 ├── .env.example
 ├── .gitignore
 ├── package.json
