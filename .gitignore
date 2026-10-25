@@ -1,4 +1,30 @@
-node_modules/
+# Secrets (never commit)
 .env
+.env.*
 **/.env
+**/.env.*
+!.env.example
+!**/.env.example
+
+# Dependencies / build output
+node_modules/
+**/node_modules/
+.next/
+**/.next/
+out/
+**/out/
+dist/
+**/dist/
+coverage/
+**/coverage/
+*.tsbuildinfo
+
+# Local files
 *.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.backup
+*.dump
+*.sql.gz
