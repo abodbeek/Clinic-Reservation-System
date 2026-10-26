@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import Navbar from '@/components/Navbar';
+import Admin_Navbar from '@/components/Admin_Navbar';
 import Footer from '@/components/Footer';
 import { apiFetch } from '@/lib/api';
 import { getSession } from '@/lib/auth';
@@ -48,7 +48,7 @@ export default function AdminDashboard() {
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
-      <Navbar />
+      <Admin_Navbar />
 
       <main className="flex-1 max-w-7xl mx-auto px-6 py-10 w-full">
         {loading && <p role="status">Veriler yükleniyor...</p>}

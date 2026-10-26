@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { clearSession } from '@/lib/auth'; 
 
-export default function Navbar() {
+export default function Admin_Navbar() {
   const router = useRouter();
   const [showLogoutModal, setShowLogoutModal] = useState(false);
 
@@ -31,6 +31,9 @@ export default function Navbar() {
 
           <Link href="/Doktorlar" className="px-4 py-2 text-[#6b8bc4] border border-[#6b8bc4] rounded-lg hover:bg-[#6b8bc4] hover:text-white transition">
             Doktorlar
+          </Link>
+          <Link href="/appointments" className="px-4 py-2 text-[#6b8bc4] border border-[#6b8bc4] rounded-lg hover:bg-[#6b8bc4] hover:text-white transition">
+            Randevularım
           </Link>
           <Link href="/Randevu_Al" className="px-4 py-2 text-[#6b8bc4] border border-[#6b8bc4] rounded-lg hover:bg-[#6b8bc4] hover:text-white transition">
             Randevu Al

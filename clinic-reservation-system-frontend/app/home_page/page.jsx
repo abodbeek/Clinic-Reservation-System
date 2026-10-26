@@ -16,7 +16,7 @@ export default function Home_Page() {
           </p>
           
           <div className="flex justify-center gap-4">
-            <Link href="/register" className="bg-[#6b8bc4] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#3c4e6e] transition shadow-md">
+            <Link href="/Randevu_Al" className="bg-[#6b8bc4] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#3c4e6e] transition shadow-md">
               Hemen Randevu Al
             </Link>
           </div>

@@ -18,8 +18,9 @@ export default function LoginPage() {
       });
       saveSession(data.token, data.user);
       if (data.user.role === 'ADMIN') router.push('/admin/dashboard');
-      else if (data.user.role === 'PATIENT') router.push('/Randevu_Al');
-      else router.push('/home_page');
+      else if (data.user.role === 'PATIENT') router.push('/home_page');
+      else if (data.user.role === 'DOCTOR') router.push('/doctor_page');
+      else router.push('/home_page'); 
     } catch (err) {
       alert(err.message || 'Giriş yapılamadı.');
     }
