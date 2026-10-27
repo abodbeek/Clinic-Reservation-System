@@ -89,4 +89,40 @@ router.get("/admin-test", protect, authorize("ADMIN"), (_req, res) => {
   return res.json({ message: "Welcome Admin" });
 });
 
+// ADMIN - Dashboard statistics
+// GET /api/auth/stats
+router.get("/stats", protect, authorize("ADMIN"), async (_req, res) => {
+  try {
+    const result = await pool.query(`
+        SELECT
+          (
+            SELECT COUNT(*)::int
+            FROM users
+            WHERE role = 'PATIENT'
+          ) AS total_patients,
+
+          (
+            SELECT COUNT(*)::int
+            FROM doctors
+            WHERE is_active = TRUE
+          ) AS active_doctors,
+
+          (
+            SELECT COUNT(*)::int
+            FROM appointments
+          ) AS total_appointments
+      `);
+
+    return res.status(200).json({
+      stats: result.rows[0],
+    });
+  } catch (error) {
+    console.error("Admin stats error:", error);
+
+    return res.status(500).json({
+      message: "Internal server error",
+    });
+  }
+});
+
 module.exports = router;
